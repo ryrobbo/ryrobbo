@@ -1,0 +1,45 @@
+<?php
+$this->headTitle('Categories');
+?>
+<div class="page">
+    <?php if ($this->deleted): ?>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-success">
+                    <span class="glyphicon glyphicon-info-sign"></span> Category deleted successfully
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>All Categories <a href="/admin/categories/add" class="btn btn-info pull-right">Create Category</a></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Slug</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($this->categories as $category) { ?>
+                            <tr>
+                                <td><?php echo $category->category ?></td>
+                                <td><a href="/category/<?php echo $category->slug ?>" target="_blank"><?php echo $category->slug ?></a></td>
+                                <td class="text-right"><a class="btn btn-success" href="/admin/categories/edit/<?php echo $category->id ?>">Edit</a></td>
+                                <td class="text-right"><a class="btn btn-danger delete" href="/admin/categories/delete/<?php echo $category->id ?>">Delete</a></td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

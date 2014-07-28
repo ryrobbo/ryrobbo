@@ -1,0 +1,48 @@
+<?php
+$this->headTitle('Create Page');
+
+$this->headScript()->prependFile('/assets/js/tinymce/tinymce.min.js')
+        ->appendFile('/assets/js/tinymce.config.js');
+
+$form = $this->form;
+$form->prepare();
+?>
+<div class="page">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <h1>Add Page</h1>
+            <form action="/admin/pages/add" method="post" name="pageform" id="page-form" class="form">
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('name')) . PHP_EOL; ?>
+                    <?php echo $this->formElement($form->get('name')) . PHP_EOL; ?>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('title')) . PHP_EOL; ?>
+                    <?php echo $this->formElement($form->get('title')) . PHP_EOL; ?>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('template')) . PHP_EOL; ?>
+                    <?php echo $this->formElement($form->get('template')) . PHP_EOL; ?>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('order')) . PHP_EOL; ?>
+                    <?php echo $this->formElement($form->get('order')) . PHP_EOL; ?>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('content')) . PHP_EOL; ?>
+                    <?php echo $this->formElement($form->get('content')) . PHP_EOL; ?>
+                    <?php echo $this->formElement($form->get('id')) . PHP_EOL; ?>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('published')) . PHP_EOL; ?>
+                    <?php echo $this->formElement($form->get('published')) . PHP_EOL; ?>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('onmenu')) . PHP_EOL; ?>
+                    <?php echo $this->formElement($form->get('onmenu')) . PHP_EOL; ?>
+                </div>
+                <button class="btn btn-success btn-lg">Save Page</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<?php
+$this->headTitle('Edit Page');
+
+$this->headScript()->prependFile('/assets/js/tinymce/tinymce.min.js')
+        ->appendFile('/assets/js/tinymce.config.js');
+
+$form = $this->form;
+$form->prepare();
+
+?>
+<div class="page">
+    <?php if($this->updated): ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success">
+                <span class="glyphicon glyphicon-info-sign"></span> Page updated successfully
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+    <?php if($this->insert): ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success">
+                <span class="glyphicon glyphicon-info-sign"></span> Page created successfully
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <h1>Edit Page</h1>
+            <?php echo $this->form()->openTag($form) . PHP_EOL; ?>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('name')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('name')) . PHP_EOL; ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('title')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('title')) . PHP_EOL; ?>
+            </div>
+            <div class="form-group">
+                    <?php echo $this->formLabel($form->get('template')) . PHP_EOL; ?>
+                    <?php echo $this->formElement($form->get('template')) . PHP_EOL; ?>
+                </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('order')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('order')) . PHP_EOL; ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('content')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('content')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('id')) . PHP_EOL; ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('published')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('published')) . PHP_EOL; ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('onmenu')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('onmenu')) . PHP_EOL; ?>
+            </div>
+            <button class="btn btn-success btn-lg">Save Page</button>
+            <?php echo $this->form()->closeTag($form) . PHP_EOL; ?>
+        </div>
+    </div>
+</div>

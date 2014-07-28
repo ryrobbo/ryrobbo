@@ -1,0 +1,227 @@
+@font-face {
+    font-family: 'cabinmedium';
+    src: url('../fonts/cabin-medium-webfont.eot');
+    src: url('../fonts/cabin-medium-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/cabin-medium-webfont.woff') format('woff'),
+        url('../fonts/cabin-medium-webfont.ttf') format('truetype'),
+        url('../fonts/cabin-medium-webfont.svg#cabinmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial,sans-serif;
+    line-height: 1;
+}
+
+header {
+    background-color: #488fff;
+    border-bottom: 10px solid #122440;
+}
+.site-header {
+    padding: 15px 0 15px 0;
+}
+.site-header .logo {
+    width:302px;
+    height: 75px;
+}
+nav ul{
+    padding-top: 20px;
+    padding-left: 120px;
+}
+nav ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float:left;
+}
+nav ul li a{
+    display:block;
+    padding: 5px;
+    margin-right: 20px;
+    color:#fff;
+    font-size: 16px;
+    font-family: cabinmedium, Arial, sans-serif;
+    border-bottom: dotted 1px #fff;
+}
+
+.page, article.post {
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+article.post img {
+    max-width: 100%;
+    border: 1px solid #000;
+}
+
+article.post span.dir {
+    display: inline-block;
+    padding: 3px 5px 3px 5px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    font-family:"Lucida Console";
+    font-size: 13px;
+    border-radius: 3px;
+}
+article.post .syntaxhighlighter {
+    padding: 20px 0 20px 0;
+}
+#disqus_thread {
+    padding-bottom: 40px;
+}
+.page .post-section {
+    border-bottom: 2px dashed #ccc;
+}
+.page h1, h2, h3, h4, h5, h6, 
+article.post h1, h2, h3, h4, h5, h6 {
+    font-family: cabinmedium, Arial, sans-serif;
+}
+.page h1, article.post h1 {
+    font-size: 28px;
+}
+.page h2, article.post h2 {
+    font-size: 20px;
+}
+.page h3, article.post h3 {
+    font-size: 16px;
+}
+.page h4, article.post h4 {
+    font-size: 12px;
+}
+.page p, article.post p {
+    color:#444444;
+    margin-bottom: 15px;
+    line-height: 20px;
+}
+
+article.post .post-info {
+    font-size: 12px;
+    border-bottom: 1px dashed #bbb;
+    padding-bottom: 5px;
+}
+.syntaxhighlighter table .container:before {
+    display: none !important;
+}
+
+aside {
+    margin-top: 30px;
+}
+
+.sidebar-item {
+    margin-bottom: 20px;
+}
+
+.sidebar-item-title {
+    height:35px;
+}
+
+.sidebar-item-title p, .glyphicon {
+    float:left;
+    margin-right:20px;
+}
+
+.sidebar-item-title .glyphicon {
+    font-size: 24px;
+    color:#000;
+}
+
+.sidebar-item-title p {
+    font-family: cabinmedium, Arial, sans-serif;
+}
+
+.sidebar-item-content .list-links{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+.sidebar-item-content .list-links li{
+    color:#000;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #000;
+    line-height: 18px;
+}
+
+footer {
+    background-color: #122440;
+    padding:15px 0 15px 0;
+    border-top: 4px solid #488fff;
+}
+footer .social-icon {
+    width:50px;
+    height: 40px;
+}
+.footer-info {
+    color:#fff;
+}
+.copyright {
+    font-weight: bold;
+}
+
+.disclaimer {
+    font-size: 12px;
+    line-height:18px;
+}
+
+.btn {
+    font-family: cabinmedium, Arial, sans-serif;
+}
+
+/* 
+BELOW ARE MEDIA QUERIES FOR WHEN WE WANT
+OUR DESIGN TO DO SOMETHING THAT BOOTSTRAP
+CAN'T DO OUT OF THE BOX
+*/
+
+/* Extra small devices (phones, less than 360px) */
+@media (max-width: 767px) {
+    .site-header .logo {
+        margin: auto;
+        display: block;
+    }
+    nav ul{
+        padding-top: 15px;
+        padding-left: 0;
+        text-align: center;
+    }
+    nav ul li {
+        float: none;
+        display: inline-block;
+        
+    }
+    nav ul li:last-child a{
+        margin-right: 0;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .site-header .logo {
+        margin: auto;
+        display: block;
+    }
+    nav ul{
+        padding-top: 15px;
+        padding-left: 0;
+        text-align: center;
+    }
+    nav ul li {
+        float: none;
+        display: inline-block;
+        
+    }
+    nav ul li:last-child a{
+        margin-right: 0;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1999px){
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

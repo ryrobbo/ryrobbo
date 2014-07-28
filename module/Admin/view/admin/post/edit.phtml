@@ -1,0 +1,86 @@
+<?php
+$this->headTitle('Edit Post');
+
+$this->headScript()->prependFile('/assets/js/tinymce/tinymce.min.js')
+        ->appendFile('/assets/js/tinymce.config.js');
+
+$form = $this->form;
+$form->prepare();
+
+$categoryform = $this->categoryform;
+$categoryform->prepare();
+
+?>
+<div class="page">
+    <?php if($this->updated): ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success">
+                <span class="glyphicon glyphicon-info-sign"></span> Post updated successfully
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+    <?php if($this->inserted): ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-success">
+                <span class="glyphicon glyphicon-info-sign"></span> Post created successfully
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <h1>Edit Post</h1>
+            <?php echo $this->form()->openTag($form) . PHP_EOL; ?>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('title')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('title')) . PHP_EOL; ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('description')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('description')) . PHP_EOL; ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('content')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('content')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('id')) . PHP_EOL; ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('published')) . PHP_EOL; ?>
+                <?php echo $this->formElement($form->get('published')) . PHP_EOL; ?>
+            </div>
+            <button class="btn btn-success btn-lg">Save Post</button>
+            <?php echo $this->form()->closeTag($form) . PHP_EOL; ?>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-lg-push-1 col-md-push-1">
+            <h1>Categories</h1>
+
+            <?php echo $this->form()->openTag($categoryform) . PHP_EOL; ?>
+            <div class="form-group">
+                <?php echo $this->formElement($categoryform->get('cid')) . PHP_EOL; ?>
+            </div>
+            <input type="hidden" value="<?php echo $this->id ?>" name="pid">
+            <button type="submit" class="btn btn-success">Add</button>
+            <?php echo $this->form()->closeTag($categoryform) . PHP_EOL; ?>
+
+            <?php if ($this->categories->count() > 0) { ?>
+                <?php foreach ($this->categories as $category) { ?>
+                    <form method="post" action="/admin/postcategory/delete">
+                        <div class="alert alert-info">
+                            <button type="submit" class="close"><span>&times;</span></button>
+                            <strong><?php echo $category->category ?></strong>
+                        </div>
+                        <input type="hidden" value="<?php echo $category->id ?>" name="id">
+                        <input type="hidden" value="<?php echo $this->id ?>" name="pid">
+                    </form>
+                <?php } ?>
+            <?php } else { ?>
+                <div class="alert alert-danger">
+                    <strong>No categories yet</strong>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</div>

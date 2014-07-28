@@ -1,0 +1,24 @@
+<?php
+$this->headTitle('Create Category');
+
+$this->headScript()->prependFile('/assets/js/tinymce/tinymce.min.js')
+        ->appendFile('/assets/js/tinymce.config.js');
+
+$form = $this->form;
+$form->prepare();
+?>
+<div class="page">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <h1>Add Category</h1>
+            <form action="/admin/categories/add" method="post" name="categoriesform" id="categories-form" class="form">
+                <div class="form-group">
+                    <?php echo $this->formLabel($form->get('category')) . PHP_EOL; ?>
+                    <?php echo $this->formElement($form->get('category')) . PHP_EOL; ?>
+                    <?php echo $this->formElement($form->get('id')) . PHP_EOL; ?>
+                </div>
+                <button class="btn btn-success btn-lg">Save Category</button>
+            </form>
+        </div>
+    </div>
+</div>

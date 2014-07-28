@@ -1,0 +1,46 @@
+@import "main.css";
+
+header {
+    border-bottom: none;
+}
+.navigation {
+    width:100%;
+    background-color: #122440;
+}
+.navbar-collapse {
+    padding: 0;
+}
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    font-family: 'cabinmedium';
+}
+
+.navbar-default {
+    background-color: #122440;
+    border: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #fff;
+    color:#122440;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color:#122440;
+    background-color: #fff;
+}
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-bottom-color: #fff;
+    border-top-color: #fff;
+}
+.page {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+#category-form {
+    margin-bottom: 15px;
+}
