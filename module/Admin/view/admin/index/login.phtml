@@ -1,0 +1,33 @@
+<?php
+$this->headTitle('Login');
+
+$form = $this->form;
+$form->prepare();
+?>
+<img src="/assets/images/ryrobbo-logo.png" alt="Ryrobbo login">
+<?php echo $this->form()->openTag($form) . PHP_EOL; ?>
+<?php
+echo $this->formElementErrors()->setMessageOpenFormat('<div class="alert alert-danger"><span class="glyphicon glyphicon-info-sign"></span>')
+        ->setMessageSeparatorString('</div><div class="alert alert-danger">')
+        ->setMessageCloseString('</div>')
+        ->render($form->get('email'));
+?>
+
+<?php
+echo $this->formElementErrors()->setMessageOpenFormat('<div class="alert alert-danger"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;&nbsp;')
+        ->setMessageSeparatorString('</div><div class="alert alert-danger">')
+        ->setMessageCloseString('</div>')
+        ->render($form->get('pwd'));
+?>
+<div class="form-group">
+    <?php echo $this->formLabel($form->get('email')) . PHP_EOL; ?>
+    <?php echo $this->formElement($form->get('email')) . PHP_EOL; ?>
+</div>
+<div class="form-group">
+    <?php echo $this->formLabel($form->get('pwd')) . PHP_EOL; ?>
+    <?php echo $this->formElement($form->get('pwd')) . PHP_EOL; ?>
+</div>
+<div class="form-group">
+    <button class="btn btn-default btn-lg">Submit</button>
+</div>
+<?php echo $this->form()->closeTag($form) . PHP_EOL; ?>

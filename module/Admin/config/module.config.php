@@ -1,12 +1,13 @@
 <?php
 
+
 return array(
     'router' => array(
         'routes' => array(
             'admin' => array(
-                'type' => 'Literal',
+                'type' => 'Segment',
                 'options' => array(
-                    'route' => '/admin',
+                    'route' => '/admin[/:action]',
                     'defaults' => array(
                         'controller' => 'Admin\Controller\Index',
                         'action' => 'index',
@@ -70,8 +71,14 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'Session' => 'Admin\Service\Factory\Session'
+            'Session' => 'Admin\Service\Factory\Session',
+            'Login' => 'Admin\Service\Factory\LoginTable',
+            'LoginTableGateway' => 'Admin\Service\Factory\LoginTableGateway',
         ),
+        'invokables' => array(
+            'AdminSession' => 'Admin\Service\Invokable\AdminSession',
+            'LoginMapper' => 'Admin\Service\Mapper\Login',
+        )
     ),
     'controllers' => array(
         'invokables' => array(
@@ -85,11 +92,13 @@ return array(
     'view_manager' => array(
         'template_map' => array(
             'layout/admin' => __DIR__ . '/../view/layout/layout.phtml',
+            'layout/adminlogin' => __DIR__ . '/../view/layout/login.phtml',
+            'admin/login' => __DIR__ . '/../view/admin/index/login.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
-    //'template_map' => include __DIR__ . '/../template_map.php',
+        //'template_map' => include __DIR__ . '/../template_map.php',
     ),
     'session_config' => array(
         'cookie_httponly' => true,
