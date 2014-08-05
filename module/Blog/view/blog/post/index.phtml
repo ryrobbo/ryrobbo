@@ -14,7 +14,7 @@ $this->headScript()->appendFile('/assets/js/shCore.js')
     <p class="post-info">
         <strong>Posted:</strong>
         <time datetime="<?php echo date('Y-m-d', strtotime($this->post->posted)) ?>">
-            <?php echo $this->dateFormat(new DateTime($this->post->posted), IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'en_GB') ?> 
+           <?php echo date('d F Y', strtotime($this->post->posted)) ?>
         </time>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <strong>Categories:</strong> <?php echo $this->getPostCategory($this->post->id) ?>

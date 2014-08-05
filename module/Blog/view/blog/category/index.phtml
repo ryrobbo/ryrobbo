@@ -11,7 +11,7 @@ $this->headTitle($this->category->category . ' category');
                         <h2><a href="/post/<?php echo $post->pslug ?>"><?php echo $post->title ?></a>
                             <span class="pull-right">
                                 <time datetime="<?php echo date('Y-m-d', strtotime($post->posted)) ?>">
-                                    <?php echo $this->dateFormat(new DateTime($post->posted), IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'en_GB') ?> 
+                                    <?php echo date('d F Y', strtotime($post->posted)) ?>
                                 </time>
                             </span>
                         </h2>
