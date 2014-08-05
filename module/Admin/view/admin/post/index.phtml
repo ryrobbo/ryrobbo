@@ -46,7 +46,7 @@ $this->headTitle('Posts');
                                 <td><?php echo $post->title ?></td>
                                 <td><a href="/post/<?php echo $post->slug ?>" target="_blank"><?php echo $post->slug ?></a></td>
                                 <td><?php echo $post->description ?></td>
-                                <td><?php echo $this->dateFormat(new DateTime($post->posted), IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'en_GB') ?></td>
+                                <td><?php echo date('d F Y', strtotime($post->posted)) ?></td>
                                 <td><?php if ($post->published == 1): ?> <span class="glyphicon glyphicon-ok"></span> <?php else: ?> <span class="glyphicon glyphicon-remove"></span> <?php endif; ?></td>
                                 <td class="text-right"><a class="btn btn-success" href="/admin/posts/edit/<?php echo $post->id ?>">Edit</a></td>
                                 <td class="text-right"><a class="btn btn-danger delete" href="/admin/posts/delete/<?php echo $post->id ?>">Delete</a></td>
