@@ -14,7 +14,7 @@ $this->headScript()->appendFile('/assets/js/shCore.js')
     <p class="post-info">
         <strong>Posted:</strong>
         <time datetime="<?php echo date('Y-m-d', strtotime($this->post->posted)) ?>">
-           <?php echo date('d F Y', strtotime($this->post->posted)) ?>
+            <?php echo date('d F Y', strtotime($this->post->posted)) ?>
         </time>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <strong>Categories:</strong> <?php echo $this->getPostCategory($this->post->id) ?>
@@ -38,6 +38,12 @@ $this->headScript()->appendFile('/assets/js/shCore.js')
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 <script>
-    SyntaxHighlighter.autoloader('js /assets/js/shBrushJScript.js', 'php /assets/js/shBrushPhp.js')
+    SyntaxHighlighter.autoloader(
+            'js /assets/js/shBrushJScript.js',
+            'php /assets/js/shBrushPhp.js',
+            'css php /assets/js/shBrushCss.js',
+            'xml php /assets/js/shBrushXml.js',
+            'sql php /assets/js/shBrushSql.js'
+            )
     SyntaxHighlighter.all()
 </script>
