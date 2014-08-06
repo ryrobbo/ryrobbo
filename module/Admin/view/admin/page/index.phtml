@@ -39,7 +39,7 @@ $this->headTitle('Pages');
                                 <td><?php echo $page->name ?></td>
                                 <td><?php echo $page->title ?></td>
                                 <td><a href="/page/<?php echo $page->slug ?>" target="_blank"><?php echo $page->slug ?></a></td>
-                                <td><?php echo $this->dateFormat(new DateTime($page->posted), IntlDateFormatter::LONG, IntlDateFormatter::NONE, 'en_GB') ?></td>
+                                <td><?php echo date('d F Y', strtotime($page->posted)) ?></td>
                                 <td><?php if ($page->published == 1): ?> <span class="glyphicon glyphicon-ok"></span> <?php else: ?> <span class="glyphicon glyphicon-remove"></span> <?php endif; ?></td>
                                 <td><?php if ($page->onmenu == 1): ?> <span class="glyphicon glyphicon-ok"></span> <?php else: ?> <span class="glyphicon glyphicon-remove"></span> <?php endif; ?></td>
                                 <td><?php echo $page->order ?></td>
