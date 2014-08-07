@@ -50,6 +50,7 @@ class IndexController extends AbstractActionController {
                 if ($login) {
                     // set session
                     $this->getServiceLocator()->get('AdminSession')->setLoggedIn($login);
+                    $this->getServiceLocator()->get('AdminSession')->getDefaultManager()->rememberMe(2400000);
 
                     // redirect to main account page
                     return $this->redirect()->toRoute('admin', array(
