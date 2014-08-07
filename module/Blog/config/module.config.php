@@ -98,17 +98,6 @@ return array(
         'doctype' => 'HTML5',
         'not_found_template' => 'error/404',
         'exception_template' => 'error/index',
-        'template_map' => array(
-            'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
-            'blog/index/index' => __DIR__ . '/../view/blog/index/index.phtml',
-            'blog/page/index' => __DIR__ . '/../view/blog/page/index.phtml',
-            'blog/page/contact' => __DIR__ . '/../view/blog/page/contact.phtml',
-            'error/404' => __DIR__ . '/../view/error/404.phtml',
-            'error/index' => __DIR__ . '/../view/error/index.phtml',
-            'partial/menu' => __DIR__ . '/../view/partial/menu.phtml',
-            'partial/categories' => __DIR__ . '/../view/partial/categories.phtml',
-            'partial/recentposts' => __DIR__ . '/../view/partial/recentposts.phtml',
-        ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
