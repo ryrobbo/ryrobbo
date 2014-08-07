@@ -18,7 +18,7 @@ class IndexController extends AbstractActionController {
     }
 
     public function loginAction() {
-        $this->layout('layout/adminlogin');
+        $this->layout('layout/login');
 
         $form = new \Admin\Form\LoginForm();
 
@@ -28,7 +28,7 @@ class IndexController extends AbstractActionController {
     }
 
     public function loginprocessAction() {
-        $this->layout('layout/adminlogin');
+        $this->layout('layout/login');
 
         if ($this->getRequest()->isPost()) {
             $post = $this->getRequest()->getPost();

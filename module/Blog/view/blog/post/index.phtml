@@ -1,6 +1,6 @@
 <?php
 $this->headTitle($this->post->title);
-$this->headMeta()->setProperty('description', $this->post->description);
+$this->headMeta()->setName('description', $this->post->description);
 $this->headLink()->appendStylesheet('/assets/css/shCore.css')
         ->appendStylesheet('/assets/css/shThemeDefault.css');
 
