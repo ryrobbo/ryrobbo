@@ -56,7 +56,7 @@ article.post img {
 }
 
 article.post span.dir {
-    display: inline-block;
+    display: inline;
     padding: 3px 5px 3px 5px;
     background-color: #eee;
     border: 1px solid #ccc;
@@ -74,7 +74,7 @@ article.post .syntaxhighlighter {
     border-bottom: 2px dashed #ccc;
 }
 .page h1, h2, h3, h4, h5, h6, 
-article.post h1, h2, h3, h4, h5, h6 {
+article.post h1, h2, h3, h4, h5, h6, ul, ol {
     font-family: cabinmedium, Arial, sans-serif;
 }
 .page h1, article.post h1 {
@@ -90,6 +90,11 @@ article.post h1, h2, h3, h4, h5, h6 {
     font-size: 12px;
 }
 .page p, article.post p {
+    color:#444444;
+    margin-bottom: 15px;
+    line-height: 20px;
+}
+.page ul li, .page ol li, article.post ul li, article.post ol li{
     color:#444444;
     margin-bottom: 15px;
     line-height: 20px;
