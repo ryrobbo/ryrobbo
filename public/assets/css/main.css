@@ -74,7 +74,7 @@ article.post .syntaxhighlighter {
     border-bottom: 2px dashed #ccc;
 }
 .page h1, h2, h3, h4, h5, h6, 
-article.post h1, h2, h3, h4, h5, h6, ul, ol {
+article.post h1, h2, h3, h4, h5, h6 {
     font-family: cabinmedium, Arial, sans-serif;
 }
 .page h1, article.post h1 {
