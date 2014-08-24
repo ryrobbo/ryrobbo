@@ -1,7 +1,10 @@
 <?php
 $this->headTitle($this->post->title);
 $this->headMeta()->setName('description', $this->post->description);
-$this->headLink()->appendStylesheet('/assets/css/shCore.css')
+$this->headLink(array(
+    'rel' => 'author',
+    'href' => 'https://plus.google.com/+RyanRobinsonn'
+))->appendStylesheet('/assets/css/shCore.css')
         ->appendStylesheet('/assets/css/shThemeDefault.css');
 
 $this->headScript()->appendFile('/assets/js/shCore.js')
