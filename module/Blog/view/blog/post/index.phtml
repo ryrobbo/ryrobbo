@@ -33,7 +33,6 @@ $this->headScript()->appendFile('/assets/js/shCore.js')
         &nbsp;&nbsp;&nbsp;&nbsp;
         <strong>Categories:</strong> <?php echo $this->getPostCategory($this->post->id) ?>
     </p>
-    <p><img src="/assets/images/uploads/<?php echo $this->post->id ?>.png" class="img-responsive" alt="<?php echo $this->post->title; ?>"></p>
     <?php echo $this->post->content ?>
 </article>
 <div id="disqus_thread"></div>
