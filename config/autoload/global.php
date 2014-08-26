@@ -11,12 +11,8 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
+            'Zend\Cache' => 'Zend\Cache\Service\StorageCacheFactory',
             'DbAdapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
-        ),
-    ),
-    'service_manager' => array(
-        'factories' => array(
-            'Zend\Cache' => 'Zend\Cache\Service\StorageCacheFactory'
         )
     ),
     'cache' => array(
