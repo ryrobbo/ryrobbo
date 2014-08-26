@@ -1,5 +1,4 @@
 <?php
-
 return array(
     'db' => array(
         'driver' => 'Pdo',
@@ -15,4 +14,20 @@ return array(
             'DbAdapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
         ),
     ),
+    'service_manager' => array(
+        'factories' => array(
+            'Zend\Cache' => 'Zend\Cache\Service\StorageCacheFactory'
+        )
+    ),
+    'cache' => array(
+        'adapter' => 'filesystem',
+        'options' => array(
+            'cache_dir' => 'data/cache/fullpage'
+        )
+    ),
+    'plugins' => array(
+        'exception_handler' => array(
+            'throw_exceptions' => false
+        )
+    )
 );
