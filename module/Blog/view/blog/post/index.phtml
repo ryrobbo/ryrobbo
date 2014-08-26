@@ -6,8 +6,10 @@ $this->headMeta()->setName('description', $this->post->description);
 $this->headMeta()->setName('twitter:card', 'summary_large_image');
 $this->headMeta()->setName('twitter:creator', '@ryrobbo');
 $this->headMeta()->setName('twitter:title', $this->post->title);
-$this->headMeta()->setName('twitter:description', '@ryrobbo');
+$this->headMeta()->setName('twitter:description', $this->post->description);
 $this->headMeta()->setName('twitter:image:src', 'http://ryrobbo.com/assets/images/uploads/' . $this->post->id . '.png');
+$this->headMeta()->setName('twitter:site', '@ryrobbo');
+$this->headMeta()->setName('twitter:domain', 'http://ryrobbo.com');
 
 // CSS AND JS
 $this->headLink(array(
