@@ -13,18 +13,16 @@ $this->headMeta()->setName('twitter:domain', 'http://ryrobbo.com');
 
 // CSS AND JS
 $this->headLink(array(
-    'rel' => 'author',
-    'href' => 'https://plus.google.com/+RyanRobinsonn'
-))->appendStylesheet('/assets/css/shCore.css')
+            'rel' => 'author',
+            'href' => 'https://plus.google.com/+RyanRobinsonn'
+        ))->appendStylesheet('/assets/css/shCore.css')
         ->appendStylesheet('/assets/css/shThemeDefault.css');
 
 $this->headScript()->appendFile('/assets/js/shCore.js')
         ->appendFile('/assets/js/shAutoloader.js');
 ?>
 <article class="post">
-    <hgroup>
-        <h1><?php echo $this->post->title; ?></h1>
-    </hgroup>
+    <h1><?php echo $this->post->title; ?></h1>
     <p class="post-info">
         <strong>Posted:</strong>
         <time datetime="<?php echo date('Y-m-d', strtotime($this->post->posted)) ?>">
