@@ -1,7 +1,9 @@
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^ryrobbo.co.uk$ [OR]
 RewriteCond %{HTTP_HOST} ^www.ryrobbo.co.uk$
-RewriteRule (.*)$ http://ryrobbo.com/$1 [R=301,L]
+RewriteRule (.*)$ http://www.ryrobbo.com/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^ryrobbo.com [NC]
+RewriteRule ^(.*)$ http://www.ryrobbo.com/$1 [L,R=301]
 # The following rule tells Apache that if the requested filename
 # exists, simply serve it.
 RewriteCond %{REQUEST_FILENAME} -s [OR]
