@@ -13,24 +13,38 @@ $this->headMeta()->setName('twitter:domain', 'http://ryrobbo.com');
 
 // CSS AND JS
 $this->headLink(array(
-            'rel' => 'author',
-            'href' => 'https://plus.google.com/+RyanRobinsonn'
-        ))->appendStylesheet('/assets/css/shCore.css')
-        ->appendStylesheet('/assets/css/shThemeDefault.css');
+    'rel' => 'author',
+    'href' => 'https://plus.google.com/+RyanRobinsonn'
+))->appendStylesheet('/assets/css/shCore.css')
+    ->appendStylesheet('/assets/css/shThemeDefault.css');
 
 $this->headScript()->appendFile('/assets/js/shCore.js')
-        ->appendFile('/assets/js/shAutoloader.js');
+    ->appendFile('/assets/js/shAutoloader.js')
+    ->appendScript('var switchTo5x=true;')
+    ->appendFile('http://w.sharethis.com/button/buttons.js')
+    ->appendScript('stLight.options({publisher: "a06be6cf-8e6e-4b21-8606-c133c022bb3d", doNotHash: false, doNotCopy: false, hashAddressBar: false});');
 ?>
 <article class="post">
     <h1><?php echo $this->post->title; ?></h1>
-    <p class="post-info">
-        <strong>Posted:</strong>
-        <time datetime="<?php echo date('Y-m-d', strtotime($this->post->posted)) ?>">
-            <?php echo date('d F Y', strtotime($this->post->posted)) ?>
-        </time>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <strong>Categories:</strong> <?php echo $this->getPostCategory($this->post->id) ?>
-    </p>
+
+    <div class="post-info">
+        <div class="post-meta">
+            <strong>Posted:</strong>
+            <time datetime="<?php echo date('Y-m-d', strtotime($this->post->posted)) ?>">
+                <?php echo date('d F Y', strtotime($this->post->posted)) ?>
+            </time>
+        </div>
+        <div class="post-meta">
+            <strong>Categories:</strong> <?php echo $this->getPostCategory($this->post->id) ?>
+        </div>
+        <div class="post-meta">
+            <strong>Share:</strong>
+            <span class="st_facebook"></span>
+            <span class="st_twitter"></span>
+            <span class="st_linkedin"></span>
+            <span class="st_email"></span>
+        </div>
+    </div>
     <?php echo $this->post->content ?>
 </article>
 <div id="disqus_thread"></div>
@@ -39,7 +53,7 @@ $this->headScript()->appendFile('/assets/js/shCore.js')
     var disqus_shortname = 'ryrobbo'; // required: replace example with your forum shortname
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
+    (function () {
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
@@ -47,15 +61,16 @@ $this->headScript()->appendFile('/assets/js/shCore.js')
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 <script>
     SyntaxHighlighter.autoloader(
-            'js /assets/js/shBrushJScript.js',
-            'php /assets/js/shBrushPhp.js',
-            'css /assets/js/shBrushCss.js',
-            'xml /assets/js/shBrushXml.js',
-            'sql /assets/js/shBrushSql.js'
-            )
+        'js /assets/js/shBrushJScript.js',
+        'php /assets/js/shBrushPhp.js',
+        'css /assets/js/shBrushCss.js',
+        'xml /assets/js/shBrushXml.js',
+        'sql /assets/js/shBrushSql.js'
+    )
     SyntaxHighlighter.all()
 </script>
