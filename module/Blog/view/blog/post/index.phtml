@@ -22,7 +22,7 @@ $this->headScript()->appendFile('/assets/js/shCore.js')
     ->appendFile('/assets/js/shAutoloader.js')
     ->appendScript('var switchTo5x=true;')
     ->appendFile('http://w.sharethis.com/button/buttons.js')
-    ->appendScript('stLight.options({publisher: "a06be6cf-8e6e-4b21-8606-c133c022bb3d", doNotHash: false, doNotCopy: false, hashAddressBar: false});');
+    ->appendScript('stLight.options({publisher: "a06be6cf-8e6e-4b21-8606-c133c022bb3d", doNotHash: false, doNotCopy: true, hashAddressBar: false});');
 ?>
 <article class="post">
     <h1><?php echo $this->post->title; ?></h1>
